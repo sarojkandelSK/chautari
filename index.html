@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chautari App</title>
+<link rel="stylesheet" href="style.css">
+<!-- Firebase -->
+<script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js"></script>
+</head>
+<body>
+<div id="app">
+  <header>
+    <img src="chautari-logo.png" alt="Chautari" class="logo">
+    <button id="signin-btn">Sign in with Google</button>
+  </header>
+
+  <nav>
+    <button class="tab-btn active" data-tab="home">Home</button>
+    <button class="tab-btn" data-tab="reels">Reels</button>
+    <button class="tab-btn" data-tab="messages">Messages</button>
+  </nav>
+
+  <main>
+    <aside id="sidebar">
+      <h2>Under the Tree</h2>
+      <div>Friends</div>
+      <div>Messages</div>
+      <div>Stories</div>
+
+      <h2>Trending Topics</h2>
+      <div id="trending"></div>
+    </aside>
+
+    <section id="feed">
+      <div id="stories-bar"></div>
+      <div id="compose">
+        <textarea id="compose-text" placeholder="What's happening?"></textarea>
+        <input type="file" id="compose-file">
+        <label><input type="checkbox" id="asStory"> Story</label>
+        <label><input type="checkbox" id="asReel"> Reel</label>
+        <button id="compose-post">Post</button>
+      </div>
+      <div id="posts"></div>
+    </section>
+
+    <aside id="rightbar">
+      <h2>People You May Know</h2>
+      <div id="people"></div>
+
+      <h2>Active Now</h2>
+      <div id="active"></div>
+    </aside>
+  </main>
+
+  <!-- Stories Modal -->
+  <div id="story-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="story-media"></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
